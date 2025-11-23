@@ -53,14 +53,14 @@ async function listCart(req,res){
         if(!user.cartId){
             return res.status(400).json({
                 success:false,
-                message:"Invalid user"
+                message:"Add items to the cart first."
             });
         }
         let cart=await cartModel.findById(user.cartId).populate("items"); //items is field in cart DB
         if(!cart){
             return res.status(400).json({
                 success:false,
-                message:"Cart does not exists"
+                message:"Add items to the cart first."
             });
         }
         return res.status(200).json({
