@@ -22,7 +22,6 @@ body{
     display: flex;
     flex-direction:column;
     gap:3rem;
-    align-items: center;
     padding:4rem 4rem;
     background-color: white;
     background:radial-gradient(#d0d0d07a 2px, transparent 1px);
