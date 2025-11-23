@@ -23,7 +23,7 @@ body{
     flex-direction:column;
     gap:3rem;
     align-items:center;
-    padding:2rem 4rem;
+    padding:4rem 4rem;
     background-color: white;
     background:radial-gradient(#d0d0d07a 2px, transparent 1px);
     background-size:22px 22px;
