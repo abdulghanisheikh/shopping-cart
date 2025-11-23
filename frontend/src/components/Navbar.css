@@ -49,7 +49,7 @@
 
     .logout{
       background: #fee2e2;
-      border-color: red;
+      border: 0.5px solid red;
       color: red;
 
       &:hover{
