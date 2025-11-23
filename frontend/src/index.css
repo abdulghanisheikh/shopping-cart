@@ -161,7 +161,7 @@ body{
     position:relative;
 
     .items{
-        padding:3rem 2rem;
+        padding:3rem 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
