@@ -77,8 +77,8 @@ async function loginUser(req,res){
         await user.save();
         res.cookie("token",token,{
             httpOnly:true,
-            secure:false,
-            sameSite:"lax" 
+            secure:true,
+            sameSite:"none" 
         });
         const userObj=user.toObject();
         delete userObj.password;
@@ -111,8 +111,8 @@ async function logoutUser(req,res){
         await user.save();
         res.clearCookie("token",{
             httpOnly:true,
-            secure:false,
-            sameSite:"lax"
+            secure:true,
+            sameSite:"none"
         });
         return res.status(200).json({
             success:true,
