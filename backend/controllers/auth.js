@@ -31,6 +31,7 @@ async function createUser(req,res){
         });
         const userObj=createdUser.toObject();
         delete userObj.password;
+        delete userObj.token;
         return res.status(200).json({
             success:true,
             message:"User created successfully",
@@ -64,14 +65,14 @@ async function loginUser(req,res){
                 message:"Invalid username or password"
             });
         }
-        const correct=await bcrypt.compare(password,user.password);
-        if(!correct){
+        const isMatch=await bcrypt.compare(password,user.password);
+        if(!isMatch){
             return res.status(400).json({
                 success:false,
                 message:"Invalid username or password"
             });
         }
-        const token=jwt.sign({userId:user._id},process.env.JWT_SECRET,{expiresIn:"1h"});
+        const token=jwt.sign({userId:user._id},process.env.JWT_SECRET,{expiresIn:"24h"});
         user.token=token;
         await user.save();
         res.cookie("token",token,{
@@ -81,6 +82,7 @@ async function loginUser(req,res){
         });
         const userObj=user.toObject();
         delete userObj.password;
+        delete userObj.token;
         res.status(200).json({
             success:true,
             message:"Login Successfull",
