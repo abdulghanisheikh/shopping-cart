@@ -105,6 +105,14 @@ body{
             padding:0.4rem;
             box-shadow:0px 0.5px 10px rgb(255, 0, 217);
             cursor: pointer;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .loginButton:active{
+            scale:95%;
+        }
+        .signupButton:active{
+            scale: 95%;
         }
 
         .signupButton{
@@ -168,6 +176,12 @@ body{
             font-weight: bold;
             text-align:left;
             width: 100%;
+        }
+    }
+
+    @media(min-width:700px){
+        .item{
+            width:40%;
         }
     }
 }

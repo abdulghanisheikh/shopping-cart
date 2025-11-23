@@ -30,10 +30,10 @@ const ItemsList=()=>{
 
     async function handleLogout(){
         try{
-            const {res}=await axios.post(`${baseUrl}/users/logout`,{},{
+            const {data}=await axios.post(`${baseUrl}/users/logout`,{},{
                 withCredentials:true
             });
-            const {success,message}=res;
+            const {success,message}=data;
             if(success){
                 toast.success(message);
                 setTimeout(function(){
